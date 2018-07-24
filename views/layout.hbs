@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid navbar-container">
+        <div class="left-nav">
+          <a href="/"><img src="/images/logo.jpg" alt="logo" class="logo"></a>
+          <a class="navbar-brand" href="/">FootballAIr</a>
+        </div>
+
+        <div class="navbar-text">
+          {{# if currentUserId}}
+            <a class="navbar-link" href="/dashboard">Dashboard</a> |
+            <a class="navbar-link" href="/logout">Log out</a>
+          {{else}}
+            <a class="navbar-link" href="/login">Log in</a> |
+            <a class="navbar-link" href="/users/new">Sign up</a>
+          {{/if}}
+        </div>
+      </div>
+    </nav>
     {{{body}}}
   </body>
 </html>
