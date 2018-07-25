@@ -1,4 +1,6 @@
 var express = require('express');
+const User = require('../models/user');
+
 var router = express.Router();
 
 // Sets the layout variables
