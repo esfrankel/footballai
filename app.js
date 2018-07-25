@@ -3,14 +3,22 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const express-handlebars = require('express-handlebars');
-const method-override = require('method-override');
-const session = require('express-session');
+var exphbs = require('express-handlebars');
+var methodOverride = require('method-override');
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+var hbs = exphbs.create({
+    // Specify helpers which are only registered on this instance.
+    helpers: {
+        foo: function () { return 'FOO!'; },
+        bar: function () { return 'BAR!'; }
+    }
+});
 
 // view engine setup
 app.engine('handlebars', hbs.engine);

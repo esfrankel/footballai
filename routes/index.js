@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 
 // Get Login Page
 router.get('/login', (req, res) => {
-  res.render('/login');
+  res.render('login');
 });
 
 // Submit Login
