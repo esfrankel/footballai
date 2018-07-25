@@ -9,6 +9,7 @@ var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var dashboardRouter = require('./routes/dashboard');
 
 var app = express();
 
@@ -37,7 +38,7 @@ app.use(session({secret: 'secret-unique-code', cookie: { maxAge: 3600000 }, resa
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.use('/dashboard', dashboardRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -54,5 +55,12 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+const mongoose = require('mongoose');
+const mongoURI = 'mongodb://admin:Goldie123@ds253891.mlab.com:53891/footballai';
+mongoose.connect(mongoURI)
+mongoose.Promise = global.Promise;
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 module.exports = app;

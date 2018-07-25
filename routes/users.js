@@ -10,7 +10,7 @@ router.get('/', auth.requireLogin, (req, res, next) => {
     if(err) {
       res.render('users/new');
     }
-    res.render('trips/index');
+    res.render('dashboard/index');
   });
 });
 
