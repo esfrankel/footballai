@@ -2,7 +2,7 @@ body, html {
   height: 100%
 }
 
-.section.header {
+.main-header {
   height: 100vh;
   background-image: url("../images/cheering-crowd-event-17598.jpg");
   background-position: center center;
