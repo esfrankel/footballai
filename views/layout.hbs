@@ -3,13 +3,47 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <nav>
+      <ul id="nav-container">
+        <li class="nav-item"><a href="/"><img src="/images/logo.jpg" alt="logo" class="logo"></a></li>
+        <li class="nav-item"><a href="/">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="dropbtn">Competitions</a>
+          <div class="dropdown-content">
+            <a href="#">Premier League</a>
+            <a href="#">La Liga</a>
+            <a href="#">Bundesliga</a>
+            <a href="#">Serie A</a>
+            <a href="#">Ligue 1</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="dropbtn">Players</a>
+          <div class="dropdown-content">
+            <a href="#">Lionel Messi</a>
+            <a href="#">Christiano Ronaldo</a>
+            <a href="#">Junior Neymar</a>
+            <a href="#">Kylian Mbappe</a>
+            <a href="#">Harry Kane</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="/">Case Studies</a></li>
+        <li class="nav-item"><a href="/">About</a></li>
+        {{# if currentUserId}}
+          <li class="nav-item"><a class="navbar-link" href="/dashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="navbar-link" href="/logout">Log out</a></li>
+        {{else}}
+          <li class="nav-item"><a class="navbar-link" href="/login">Log in</a></li>
+          <li class="nav-item"><a class="navbar-link" href="/users/new">Sign up</a></li>
+        {{/if}}
+      </ul>
+    </nav>
+    <!-- <nav>
       <div class="container-fluid navbar-container">
         <div class="left-nav">
           <a href="/"><img src="/images/logo.jpg" alt="logo" class="logo"></a>
@@ -26,7 +60,11 @@
           {{/if}}
         </div>
       </div>
-    </nav>
+    </nav> -->
     {{{body}}}
   </body>
+  <footer>
+    <p>Created by: Eric Frankel</p>
+    <p>Contact information: <a href="mailto:ericsf@stanford.edu">ericsf@stanford.edu</a>.</p>
+  </footer>
 </html>
