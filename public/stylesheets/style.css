@@ -71,3 +71,36 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* DASHBOARD */
+
+.dash-header {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.column {
+    float: left;
+    width: 32.33%;
+    padding: 0.5%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
