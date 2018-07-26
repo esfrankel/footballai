@@ -23,10 +23,15 @@ router.get('/login', (req, res) => {
 
 // Submit Login
 router.post('/login', (req, res, next) => {
-  User.authenticate(req.body.username, req.body.password, (err, user) => {
+  User.authenticate(req.body.username,
+  req.body.password, (err, user) => {
     if (err || !user) {
       const next_error = new Error("Username or password incorrect");
       next_error.status = 401;
+
+      return next(next_error);
+    } else {
+      req.session.userId =  user._id;
 
       return res.redirect('/');
     }
