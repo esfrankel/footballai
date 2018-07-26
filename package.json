@@ -6,7 +6,6 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "angular-footballdata-api-factory": "^0.2.4",
     "bcrypt": "^3.0.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
@@ -17,6 +16,8 @@
     "http-errors": "~1.6.2",
     "method-override": "^3.0.0",
     "mongoose": "^5.2.5",
-    "morgan": "~1.9.0"
+    "morgan": "~1.9.0",
+    "nodemon": "^1.18.3",
+    "request": "^2.87.0"
   }
 }
